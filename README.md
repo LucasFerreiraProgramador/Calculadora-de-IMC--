@@ -8,6 +8,8 @@ Este projeto é uma ferramenta interativa para cálculo do Índice de Massa Corp
 - **Tabela de Referência:** Guia integrado com as faixas de peso (Abaixo do peso até Obesidade Grau III) para facilitar a interpretação.
 - **Design Moderno:** Interface "Dark Mode" com detalhes em verde neon, utilizando a fonte Lexend para máxima legibilidade.
 
+## 🌐 TESTE O PROJETO: [CLIQUE AQUI](https://lucasferreiraprogramador.github.io/Calculadora-de-IMC--/)
+
 ## 💻 Tecnologias Utilizadas
 - **HTML5:** Estruturação semântica do formulário e tabela de dados.
 - **CSS3:** Estilização avançada com Flexbox, Google Fonts e Material Symbols.
