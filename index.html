@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Calculadora - IMC</h2>
+
+
+            <label for="peso">Peso em kg</label>
+            <div class="input-group">
+                <span class="material-symbols-outlined">scale</span>
+
+                <input type="number" id="peso" placeholder="Ex: 70">
+            </div>
+
+
+            <label for="altura">Altura em metros:</label>
+            <div class="input-group">
+                <span class="material-symbols-outlined iconealtura">square_foot</span>
+                <input type="number" id="altura" step="0.01" placeholder="Ex: 1.75">
+            </div>
+
+            <button onclick="calcularIMC()">Calcular</button>
+
+            <div id="resultado">
+                <div class="esquerda">
+                    <span class="valor"></span>
+                    <span class="label">Seu IMC</span>
+                </div>
+
+                <div class="direita">
+                    <span class="mensagem"></span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tabela">
+            <p>Tabela usada para classificar o resultado do cálculo do IMC (Índice de Massa Corporal).</p>
+            <p>Segue os critérios da Organização Mundial da Saúde (OMS). Ela relaciona o valor do IMC com a faixa de
+                classificação de peso:</p>
+
+            <table>
+                <tr>
+                    <th>IMC (kg/m²)</th>
+                    <th>Classificação</th>
+                </tr>
+                <tr>
+                    <td>Menor que 18,5</td>
+                    <td>Abaixo do peso</td>
+                </tr>
+                <tr>
+                    <td>18,5 - 24,9</td>
+                    <td>Peso normal</td>
+                </tr>
+                <tr>
+                    <td>25 - 29,9</td>
+                    <td>Sobrepeso</td>
+                </tr>
+                <tr>
+                    <td>30 - 34,9</td>
+                    <td>Obesidade grau I</td>
+                </tr>
+                <tr>
+                    <td>35 - 39,9</td>
+                    <td>Obesidade grau II</td>
+                </tr>
+                <tr>
+                    <td>40 ou mais</td>
+                    <td>Obesidade grau III</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <script>
+            function calcularIMC() {
+                const peso = parseFloat(document.getElementById("peso").value);
+                const altura = parseFloat(document.getElementById("altura").value);
+                const valorIMC = document.querySelector("#resultado .valor");
+                const mensagem = document.querySelector("#resultado .mensagem");
+                const resultadoDiv = document.getElementById("resultado");
+
+                if (!peso || !altura) {
+                    resultadoDiv.style.display = "flex";
+                    valorIMC.textContent = "--";
+                    mensagem.textContent = "Preencha todos os campos!";
+                    mensagem.style.color = "#ff5555";
+                    return;
+                }
+
+                const imc = peso / (altura * altura);
+                let classificacao = "";
+
+                if (imc < 18.5) classificacao = "Abaixo do peso";
+                else if (imc < 24.9) classificacao = "Peso normal";
+                else if (imc < 29.9) classificacao = "Sobrepeso";
+                else if (imc < 34.9) classificacao = "Obesidade grau I";
+                else if (imc < 39.9) classificacao = "Obesidade grau II";
+                else classificacao = "Obesidade grau III";
+
+                resultadoDiv.style.display = "flex";
+                valorIMC.textContent = imc.toFixed(2);
+                mensagem.textContent = classificacao;
+                mensagem.style.color = "#fff";
+            }
+
+            function novoCalculo() {
+                document.getElementById("peso").value = "";
+                document.getElementById("altura").value = "";
+                document.getElementById("resultado").style.display = "none";
+            }
+        </script>
+        <footer> 
+            <p>&copy;2026 Desenvolvido por <a href="https://lucas.ferreiradev.com/" target="_blank">Lucas Ferreira</a> - Todos os direitos reservados.</p>
+        </footer>
+</body>
+
+</html>
