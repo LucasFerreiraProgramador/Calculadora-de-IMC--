@@ -30,7 +30,6 @@ Calculadora-de-IMC/
 - [Lucas Ferreira](https://lucas.ferreiradev.com/)
 - [GitHub](https://github.com/LucasFerreiraProgramador)
 - [LinkedIn](https://www.linkedin.com/in/lucasferreira-dev-front-end/)
-- [Teste o projeto aqui](https://lucasferreiraprogramador.github.io/Calculadora-de-IMC-/)
 
 ## 📄 Licença
 Este projeto foi desenvolvido para fins de estudo e prática de desenvolvimento Back-End e Front-End.
